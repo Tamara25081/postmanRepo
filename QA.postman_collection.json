@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "ae93fab6-56c3-4ece-85ef-14a7f6930309",
+		"name": "QA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31752733",
+		"_collection_link": "https://celula-1001carros.postman.co/workspace/1001Carros.com~cb520450-30b0-4e15-a411-b4bf9ac79fba/collection/31752733-ae93fab6-56c3-4ece-85ef-14a7f6930309?action=share&source=collection_link&creator=31752733"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuario",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tamara\",\r\n    \"lastname\": \"Vera\",\r\n    \"email\": \"Tamara1.Vera.Castro@gmail.com\",\r\n    \"password\": \"Paula202020.\",\r\n    \"acceptance\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/register",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Código OTP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2945|ZCptwH7nE1qWZ2wkz1ckFYUzNYRRCLI0k39VZRu207077b7a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"Tamara.Vera.Castro@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/otp/generate",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"otp",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar código OTP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2945|ZCptwH7nE1qWZ2wkz1ckFYUzNYRRCLI0k39VZRu207077b7a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"Tamara.Vera.Castro@gmail.com\",\r\n    \"code\": 0000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/otp/validate",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"otp",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login de Usuario",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tam\",\r\n    \"lastname\": \"Vera\",\r\n    \"email\": \"Tamara1.Vera.Castro@gmail.com\",\r\n    \"password\": \"Paula202020.\",\r\n    \"acceptance\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/login",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar preferencias",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2938|dCAR9etWxjA0cp9zrOJ32lCjNrUQYlOdaEz3Tkrucfa948db",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Tamara1.Vera.Castro@gmail.com\",\r\n  \"channel\": \"1\",\r\n  \"minPrice\": \"10000000000000000000000.100000\",\r\n  \"maxPrice\": \"90000000000000000000000000.200000\",\r\n  \"minYear\": \"2000\",\r\n  \"maxYear\": \"2025\",\r\n  \"brands\": [\"Marca\"],\r\n  \"carTypes\": [\"Tipo\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/user/preferences/store",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"user",
+						"preferences",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar preferencias",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2936|gySoSjw3bddS6fa5BAfE7f3RmHkwRxFx2IAjroQ5vz6a9c4fc1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"Tamara1.Vera.Castro@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1001carros-dev.blubear.io/api/user/preferences",
+					"protocol": "https",
+					"host": [
+						"1001carros-dev",
+						"blubear",
+						"io"
+					],
+					"path": [
+						"api",
+						"user",
+						"preferences"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
